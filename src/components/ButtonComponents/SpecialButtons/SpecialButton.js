@@ -1,26 +1,23 @@
 import React from "react";
 
-const SpecialButton = ({spec, numOne, setNumOne, numTwo, setNumTwo, isSecond, setIsSecond}) => {
+const SpecialButton = ({spec, currentTotal, setCurrentTotal, previousTotal, setPreviousTotal, currentOperator, setCurrentOperator}) => {
 
-  function handleChange(special) {
-    if(special === 'C')
-    {
-      setNumOne(0);
-    }
-    if(special === '+/-')
-    {
-      console.log('Positive / Negative')
-    }
-    if(special === '%')
-    {
-      console.log('Remainder')
-    }
+  function handleSpecialClick(special) {
+      if(special === 'C'){
+        setCurrentTotal(0);
+      }
+      if(special === '%'){
+        setCurrentTotal(parseFloat(currentTotal) / 100)
+      }
+      if(special === '+/-'){
+        setCurrentTotal(parseFloat(currentTotal) * -1)
+      }
   }
 
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className = 'btn specialBtn' value = {spec} onClick = { () => handleChange(spec)}>{spec}</button>
+      <button className = 'btn specialBtn' value = {spec} onClick = { () => handleSpecialClick(spec)}>{spec}</button>
     </>
   );
 };

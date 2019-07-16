@@ -1,21 +1,21 @@
 import React from "react";
 
-const NumberButton = ({num, numOne, setNumOne}) => {
+const NumberButton = ({num, currentTotal, setCurrentTotal, previousTotal, setPreviousTotal, currentOperator, setCurrentOperator}) => {
 
-  function handleChange(number) { 
-    if(numOne === 0)
+  function handleNumberChange(number) {
+    if(currentTotal === 0)
     {
-      setNumOne(number)
+      setCurrentTotal(number)
     }
     else {
-      setNumOne(numOne + number);
+      setCurrentTotal(currentTotal + number)
     }
   }
 
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className = 'btn numberBtn' value = {num} onClick = { () => handleChange(num)}>{num}</button>
+      <button className = 'btn numberBtn' value = {num} onClick = { () => handleNumberChange(num)}>{num}</button>
     </>
   );
 };

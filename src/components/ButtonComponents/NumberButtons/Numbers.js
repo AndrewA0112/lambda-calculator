@@ -6,7 +6,7 @@ import NumberButton from "./NumberButton"
 //Import your array data to from the provided data file
 import { numbers } from "../../../data.js"
 
-const Numbers = ({numOne, setNumOne}) => {
+const Numbers = ({currentTotal, setCurrentTotal, previousTotal, setPreviousTotal, currentOperator, setCurrentOperator}) => {
   // STEP 2 - add the imported data to state
   return (
     <div className='row2'>
@@ -14,7 +14,7 @@ const Numbers = ({numOne, setNumOne}) => {
       component matching the name on the provided file. Pass
       it any props needed by the child component*/}
 
-      {numbers.map((number) => <NumberButton num = {number} numOne = {numOne} setNumOne = {setNumOne} />)}
+      {numbers.map((number, i) => <NumberButton key = {i} num = {number} currentTotal = {currentTotal} setCurrentTotal = {setCurrentTotal} previousTotal = {previousTotal} setPreviousTotal = {setPreviousTotal} currentOperator = {currentOperator} setCurrentOperator = {setCurrentOperator}/>)}
     </div>
   );
 };
