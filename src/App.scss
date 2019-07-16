@@ -1,0 +1,81 @@
+@mixin buttonSize($size) {
+    width: $size;
+    height: $size;
+}
+
+.container {
+    background-color: #BB1233;
+    padding: 2rem;
+    border-radius: 1%;
+    width: 600px;
+    
+
+    .App {
+
+        width: 100%;
+
+        .displayArea {
+            background-color: #2D2829;
+            height: 100px;
+            border-radius: 70px;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+            p {
+                margin: 0 0;
+                padding-right: 20px;
+                font-size: 3rem;
+            }
+        }
+
+        .btn {
+            font-size: 2rem;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            margin: 10px;
+            @include buttonSize(115px);
+            box-shadow: 1px 3px black;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        .numberBtn {
+            background-color: #113C78;
+
+            &:nth-last-child(2){
+                width: 250px;
+                border-radius: 50px;
+            }
+        }
+        
+        .operatorBtn {
+            background-color: #3DB5E5;
+        }
+        
+        .specialBtn {
+            background-color: #2061B0;
+        }
+
+        .btnContainer {
+            display: flex;
+
+            .col1 {
+                // border: blue solid 1px;
+                // width: 784px;
+
+                .row1 {
+                    
+                }
+            }
+
+            .col2 {
+                // border: pink solid 1px;
+            }
+        }
+    }
+}
